@@ -1,4 +1,17 @@
+"use client";
+import { useRouter } from "next/navigation";
 const Youtube = () => {
-  return <div>Youtube page</div>;
+  const router = useRouter();
+  const handleBtn = () => {
+    router.push("/");
+  };
+  return (
+    <div>
+      Youtube page
+      <div>
+        <button onClick={() => handleBtn()}>Back Home</button>
+      </div>
+    </div>
+  );
 };
 export default Youtube;
