@@ -18,7 +18,9 @@ export default function Home() {
       revalidateOnReconnect: false,
     }
   );
-  console.log(">>> check data: ", data);
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -49,7 +51,7 @@ export default function Home() {
           </Link>
         </li>
       </ul>
-      <AppTable />
+      <AppTable blogs={data} />
     </div>
   );
 }
