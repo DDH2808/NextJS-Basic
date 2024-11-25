@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div>
       <div>{data?.length}</div>
-      <AppTable blogs={data} />
+      <AppTable blogs={data?.sort((a: any, b: any) => b.id - a.id)} />
     </div>
   );
 }
